@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeService", "Practice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeRepository", "PracticeRepository\PracticeRepository.csproj", "{D2BBE436-AF69-4C61-BDDA-418C0C5EA871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeModel", "PracticeModel\PracticeModel.csproj", "{6EC81459-FCFC-459E-9EFE-7B08E949FCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPracticeProject", "TestPracticeProject\TestPracticeProject.csproj", "{5D3517E2-A1B3-4649-AFA5-A016FA10BC08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{D2BBE436-AF69-4C61-BDDA-418C0C5EA871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2BBE436-AF69-4C61-BDDA-418C0C5EA871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2BBE436-AF69-4C61-BDDA-418C0C5EA871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC81459-FCFC-459E-9EFE-7B08E949FCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC81459-FCFC-459E-9EFE-7B08E949FCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC81459-FCFC-459E-9EFE-7B08E949FCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC81459-FCFC-459E-9EFE-7B08E949FCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3517E2-A1B3-4649-AFA5-A016FA10BC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3517E2-A1B3-4649-AFA5-A016FA10BC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3517E2-A1B3-4649-AFA5-A016FA10BC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3517E2-A1B3-4649-AFA5-A016FA10BC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

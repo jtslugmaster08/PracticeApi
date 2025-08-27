@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeRepository.Dto
+namespace PracticeModel.Dto
 {
     public class ErrorDto
     {
-        public string ErrorMessage { get;set; }
-        public string ErrorCode {  get; set; }  
+        public string ErrorMessage { get; set; }
+        public string ErrorCode { get; set; }
     }
 }
