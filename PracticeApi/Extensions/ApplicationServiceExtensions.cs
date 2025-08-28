@@ -20,6 +20,8 @@ namespace PracticeApi.Extensions
 
         public static IServiceCollection AddServices(this IServiceCollection services) {
             return services.AddScoped<IErrorService,ErrorService>()
+                .AddScoped<IEmailService,EmailService>()
+                .AddScoped<IUserService,UserService>()
                 .AddScoped<IWeatherService,WeatherService>();
         }
 

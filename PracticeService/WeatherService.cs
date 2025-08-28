@@ -22,6 +22,7 @@ namespace PracticeService
         }
         public List<Weather> GetMyWeather()
         {
+            var test = _unitOfWork.WeatherRepository.GetAllProperties();
             return Enumerable.Range(1, 5).Select(index => new Weather
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),

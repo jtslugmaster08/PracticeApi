@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using PracticeApi.Extensions;
 using PracticeApi.Helpers;
 using PracticeModel.Entities;
 using PracticeRepository.Data;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +19,18 @@ builder.Services.AddIdentity<BaseUser, IdentityRole>(o =>
 }).AddRoles<IdentityRole>().AddEntityFrameworkStores<DataContext>().AddTokenProvider<DataProtectorTokenProvider<BaseUser>>(TokenOptions.DefaultProvider);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddBearerToken(options =>
 {
-    options.BearerTokenExpiration = TimeSpan.FromSeconds(1);
-}).AddCookie();
- 
+    options.BearerTokenExpiration = TimeSpan.FromMinutes(10);
+}).AddCookie().AddJwtBearer(cfg =>
+{
+    cfg.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidIssuer = builder.Configuration["Tokens:Issuer"],
+        ValidAudience = builder.Configuration["Tokens:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Tokens:Key"]))
+    };
+});
+
+
 
 builder.Services.AddControllers();
 builder.Services.AddRepositories()
