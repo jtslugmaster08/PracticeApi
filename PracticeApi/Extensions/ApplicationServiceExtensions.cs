@@ -13,7 +13,9 @@ namespace PracticeApi.Extensions
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             return services
-                .AddScoped<IUnitOfWork,UnitOfWork>().AddScoped<IWeatherRepository,WeatherRepository>().AddScoped<IErrorRepository,ErrorRepository>();
+                .AddScoped<IUnitOfWork,UnitOfWork>()
+                .AddScoped<IWeatherRepository,WeatherRepository>()
+                .AddScoped<IErrorRepository,ErrorRepository>();
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services) {

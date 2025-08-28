@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,12 +10,15 @@ using PracticeRepository.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<DataContext>();
 builder.Services.AddIdentity<BaseUser, IdentityRole>(o =>
 {
     o.User.RequireUniqueEmail = true;
 }).AddRoles<IdentityRole>().AddEntityFrameworkStores<DataContext>().AddTokenProvider<DataProtectorTokenProvider<BaseUser>>(TokenOptions.DefaultProvider);
-
-builder.Services.AddAuthentication().AddCookie();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddBearerToken(options =>
+{
+    options.BearerTokenExpiration = TimeSpan.FromSeconds(1);
+}).AddCookie();
  
 
 builder.Services.AddControllers();

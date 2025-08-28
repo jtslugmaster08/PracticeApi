@@ -19,6 +19,7 @@ namespace PracticeRepository.Data
             _configuration = configuration;
         }
 
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
